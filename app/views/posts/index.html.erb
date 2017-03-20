@@ -1,16 +1,35 @@
 <html>
 
-  <head>
-    <title>Flip Photo</title>
-  </head>
+<head>
+  <title>Flip Photo</title>
+  <meta charset="utf-8">
+  <%=  stylesheet_link_tag "application" %>
+</head>
 
-  <body>
+<body>
 
-    <div id="photos">
-    </div>
-    
-    <script></script>
-  </body>
+  <div id="photos">
+
+    <% if @posts.any? %>
+      <% @posts.each do |post| %>
+        <div class=”card”>
+          <!-- front of the card-->
+          <div class=”front”>
+            <%= post.date %>
+            <%= post.description %>
+          </div>
+          <!-- back of the card-->
+          <div class=”back”>
+            CARD FLIPPED.
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+  </div>
+
+  <script></script>
+</body>
 
 
 </html>

@@ -12,14 +12,14 @@
 
     <% if @posts.any? %>
       <% @posts.each do |post| %>
-        <div class=”card”>
+        <div class="photo">
           <!-- front of the card-->
-          <div class=”front”>
+          <div class="front">
             <%= post.date %>
             <%= post.description %>
           </div>
           <!-- back of the card-->
-          <div class=”back”>
+          <div class="back">
             CARD FLIPPED.
           </div>
         </div>

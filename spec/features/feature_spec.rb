@@ -16,12 +16,30 @@ feature "Flipboard" do
       expect(page).to have_css("form")
     end
 
-    scenario "displays the new post once form has been completed" do
+    scenario "displays the description once form has been completed" do
       visit "/posts/new"
       fill_in 'Date', with: '03/03/2017'
       fill_in 'Description', with: "test"
       click_button "Add Photo"
       expect(page).to have_content("test")
+    end
+
+    scenario "displays the date once form has been completed" do
+      visit "/posts/new"
+      fill_in 'Date', with: '03/03/2017'
+      fill_in 'Description', with: "test"
+      click_button "Add Photo"
+      expect(page).to have_content("03/03/2017")
+    end
+
+    scenario "displays images once form has been completed" do
+      visit "/posts/new"
+      fill_in 'Date', with: "06/06/2017"
+      fill_in 'Description', with: "Penguin"
+      # file = Rack::Test::UploadedFile.new(Rails.root.join("spec/fixtures/files/penguin.jpeg"), 'image/png')
+      attach_file("Image", 'spec/fixtures/files/penguin.jpeg')
+      click_button "Add Photo"
+      expect(page).to have_css("img", :src => "penguin.jpeg")
     end
   end
 

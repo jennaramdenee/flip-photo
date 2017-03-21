@@ -1,30 +1,34 @@
-.photos {
-  perspective: 800px;
+body {
+  font-family: Helvetica;
+  font-size: 32px;
+  background-color: #eee;
 }
 
 .photo {
-  position:relative;
-  width:208px;
-  height:208px;
+  position: relative;
+  width:210px;
+  height:300px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transform-style:preserve-3d;
   -webkit-transition: transform 1.5s; /* Safari and Chrome */
   transition: transform 1.5s;
+  margin: 10px;
+  display: inline-block;
+}
+
+.photo-more {
+  position: relative;
+  width:210px;
+  height:300px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transform-style:preserve-3d;
+  -webkit-transition: transform 1.5s; /* Safari and Chrome */
+  transition: transform 1.5s;
+  margin: 10px;
+  display: inline-block;
 }
 
 .front {
-  position: absolute;
-  height:100%;
-  width:100%;
-  background-color: #CC3333;
-  backface-visibility: hidden;
-  color: #fff;
-  text-align: center;
-  line-height: 208px;
-  font-family: Helvetica;
-}
-
-.back {
   position: absolute;
   height:100%;
   width:100%;
@@ -32,8 +36,17 @@
   backface-visibility: hidden;
   color: #fff;
   text-align: center;
-  line-height: 208px;
-  font-family: Helvetica;
+  line-height: 280px;
+}
+
+.back {
+  position: absolute;
+  height:100%;
+  width:100%;
+  background-color: #CC3333;
+  backface-visibility: hidden;
+  color: #fff;
+  text-align: center;
 
   /* rotating the back face of the card */
   -ms-transform: rotateY(-180deg); /* IE 9 */
@@ -45,4 +58,35 @@
   -ms-transform: rotateY(-180deg); /* IE 9 */
   -webkit-transform: rotateY(-180deg); /* Safari Chrome */
   transform: rotateY(-180deg);
+}
+
+.blue {
+  background-color: hsla(210,100%,50%,0.65);
+}
+
+#photo-info {
+  height: 30%;
+  width: 100%;
+  display: inline-block;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  color: #333;
+  line-height: 14px;
+}
+
+#photo-image {
+  height: 70%;
+  width: 100%;
+}
+
+#photo-desc {
+  font-size: 14px;
+}
+
+#photo-date {
+  font-size: 20px;
+}
+
+img {
+  margin-top: 2.5px;
 }

@@ -8,23 +8,35 @@
 
 <body>
 
-  <div id="photos">
+  <div>
 
     <% if @posts.any? %>
       <% @posts.each do |post| %>
         <div class="photo">
           <!-- front of the card-->
-          <div class="front">
-            <%= post.date %>
-            <%= post.description %>
+          <div class="back">
+            <div id="photo-image">
+              <%= image_tag(post.image.url(:medium)) %>
+            </div>
+            <div id="photo-info">
+              <p id="photo-date"><%= post.date %></p>
+              <p id="photo-desc"><%= post.description %></p>
+            </div>
           </div>
           <!-- back of the card-->
-          <div class="back">
-            CARD FLIPPED.
+          <div class="front">
+            <%= post.id %>
           </div>
         </div>
       <% end %>
     <% end %>
+
+    <div class="photo-more">
+      <div class="front blue">
+        <p id="photo-desc">... + many more!</p>
+      </div>
+    <div>
+
 
   </div>
 
